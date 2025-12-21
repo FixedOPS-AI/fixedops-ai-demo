@@ -1,0 +1,30 @@
+{
+    "HONDA": {
+        "engines": ["1.5L Turbo", "2.0L I4", "3.5L V6"],
+        "trims": ["LX", "EX", "Touring", "Sport"]
+    },
+    "FORD": {
+        "engines": ["2.7L EcoBoost", "3.5L EcoBoost", "5.0L V8 Coyote"],
+        "trims": ["XL", "XLT", "Lariat", "Platinum"]
+    },
+    "TOYOTA": {
+        "engines": ["2.5L I4", "3.5L V6", "Hybrid Synergy Drive"],
+        "trims": ["LE", "XLE", "TRD Pro", "Limited"]
+    },
+    "CHEVROLET": {
+        "engines": ["5.3L Ecotec3 V8", "6.2L V8", "3.0L Duramax Diesel"],
+        "trims": ["LT", "RST", "High Country", "Z71"]
+    },
+    "RAM": {
+        "engines": ["5.7L HEMI V8", "3.6L Pentastar V6", "6.7L Cummins"],
+        "trims": ["Big Horn", "Laramie", "Rebel", "Limited"]
+    },
+    "JEEP": {
+        "engines": ["3.6L Pentastar V6", "2.0L Turbo", "4xe Hybrid"],
+        "trims": ["Sahara", "Rubicon", "Overland", "Grand Cherokee L"]
+    },
+    "DODGE": {
+        "engines": ["6.4L HEMI V8", "6.2L Supercharged", "3.6L V6"],
+        "trims": ["R/T", "Scat Pack", "Hellcat", "GT"]
+    }
+}
