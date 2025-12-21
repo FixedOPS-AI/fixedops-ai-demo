@@ -1,31 +1,37 @@
-make,operation_code,part_number,description,unit_price,availability,stock_source
-HONDA,ALT-REPL,31100-R1A-A01,Alternator Assembly (Honda OEM),425.00,In Stock,OEM Warehouse
-HONDA,RR-BRAKE,43022-T2F-A01,Rear Brake Pad Set,85.00,In Stock,Bin B2
-HONDA,TIRE-SET,42751-MIC-123,Michelin Defender 2 (215/55R16),185.00,Same Day,Tire Rack
-HONDA,SPARK-PLUG,12290-R1A-H01,Spark Plug (NGK Laser Iridium),22.50,In Stock,Bin C1
-HONDA,TIMING-BELT,14400-R1A-004,Timing Chain Kit,210.00,In Stock,Bin C2
-HONDA,SUSP-FRONT,51350-T2A-A03,Lower Control Arm (Front Right),245.00,2 Day Order,OEM Warehouse
-HONDA,SUSP-FRONT,51360-T2A-A03,Lower Control Arm (Front Left),245.00,2 Day Order,OEM Warehouse
-HONDA,COOLING-SYS,19010-R1A-A01,Radiator Assembly,310.00,In Stock,Bin D1
-HONDA,OIL-LEAK,12341-R1A-A01,Valve Cover Gasket Set,45.00,In Stock,Bin A1
-FORD,ALT-REPL,FL3Z-10346-A,Alternator (Motorcraft),380.00,1 Day Order,Dist Center
-FORD,RR-BRAKE,KL3Z-2200-B,Rear Brake Pad Kit,79.00,In Stock,Bin F2
-FORD,TIRE-SET,GOOD-WRAN-01,Goodyear Wrangler (275/65R18),245.00,In Stock,Tire Storage
-FORD,SPARK-PLUG,SP-548,Spark Plug (Motorcraft Platinum),14.00,In Stock,Bin F4
-FORD,SUSP-FRONT,FL3Z-3078-A,Front Suspension Strut Assy,185.00,In Stock,Bin F5
-FORD,SUSP-FRONT,FL3Z-3079-A,Front Upper Control Arm,125.00,In Stock,Bin F6
-FORD,COOLING-SYS,HL3Z-8005-C,Radiator (Heavy Duty Tow),415.00,1 Day Order,Dist Center
-FORD,OIL-LEAK,BR3Z-6582-A,Valve Cover Gasket (RH),35.00,In Stock,Bin A2
-CHEVROLET,ALT-REPL,84143542,Alternator (ACDelco Gold),345.00,In Stock,Bin C1
-CHEVROLET,RR-BRAKE,23376678,Rear Brake Rotor & Pad Kit,195.00,In Stock,Bin C2
-CHEVROLET,TIRE-SET,BRIDGE-DUEL-01,Bridgestone Dueler A/T,235.00,In Stock,Tire Rack
-CHEVROLET,SUSP-FRONT,84082233,Front Shock Absorber (Rancho),115.00,In Stock,Bin C3
-CHEVROLET,OIL-LEAK,12637683,Valve Cover Gasket,28.00,In Stock,Bin C4
-RAM,ALT-REPL,4801833AB,Alternator (Mopar 220 Amp),510.00,2 Day Order,Mopar Dist
-RAM,RR-BRAKE,68049158AA,Rear Brake Pad Kit,88.00,In Stock,Bin R1
-RAM,SUSP-FRONT,68231976AA,Air Suspension Spring (Front),650.00,Special Order,Mopar Dist
-RAM,OIL-LEAK,53022224AC,Rocker Cover Gasket,42.00,In Stock,Bin R2
-JEEP,ALT-REPL,56029765AA,Alternator (Mopar),420.00,In Stock,Bin J1
-JEEP,RR-BRAKE,68334863AA,Rear Brake Pads (Ceramic),92.00,In Stock,Bin J2
-JEEP,SUSP-FRONT,68330588AB,Front Track Bar (Heavy Duty),210.00,1 Day Order,Bin J3
-JEEP,COOLING-SYS,68143886AA,Radiator,295.00,In Stock,Bin J4
+make,operation_code,part_number,description,unit_price,cost_price,availability,stock_source
+HONDA,ALT-REPL,31100-R1A-A01,Alternator Assembly (Honda OEM),425.00,380.00,In Stock,OEM Warehouse
+HONDA,RR-BRAKE,43022-T2F-A01,Rear Brake Pad Set,85.00,40.00,In Stock,Bin B2
+HONDA,RR-BRAKE,42510-T2A-A01,Rear Brake Rotor (Qty 1),110.00,65.00,In Stock,Bin B3
+HONDA,TIRE-SET,42751-MIC-123,Michelin Defender 2 (215/55R16),185.00,165.00,Same Day,Tire Rack
+HONDA,SPARK-PLUG,12290-R1A-H01,Spark Plug (NGK Laser Iridium),22.50,12.00,In Stock,Bin C1
+HONDA,TIMING-BELT,14400-R1A-004,Timing Chain Kit,210.00,150.00,In Stock,Bin C2
+HONDA,SUSP-FRONT,51611-T2A-A01,Front Strut Assembly (Right),195.00,140.00,In Stock,Bin D4
+HONDA,SUSP-FRONT,51621-T2A-A01,Front Strut Assembly (Left),195.00,140.00,In Stock,Bin D5
+HONDA,SUSP-FRONT,51350-T2A-A03,Lower Control Arm (Front Right),245.00,180.00,2 Day Order,OEM Warehouse
+HONDA,SUSP-FRONT,51360-T2A-A03,Lower Control Arm (Front Left),245.00,180.00,2 Day Order,OEM Warehouse
+HONDA,COOLING-SYS,19010-R1A-A01,Radiator Assembly,310.00,220.00,In Stock,Bin D1
+HONDA,OIL-LEAK,12341-R1A-A01,Valve Cover Gasket Set,45.00,20.00,In Stock,Bin A1
+FORD,ALT-REPL,FL3Z-10346-A,Alternator (Motorcraft),380.00,300.00,1 Day Order,Dist Center
+FORD,RR-BRAKE,KL3Z-2200-B,Rear Brake Pad Kit,79.00,45.00,In Stock,Bin F2
+FORD,RR-BRAKE,KL3Z-1125-C,Rear Brake Rotor,105.00,70.00,In Stock,Bin F3
+FORD,TIRE-SET,GOOD-WRAN-01,Goodyear Wrangler (275/65R18),245.00,210.00,In Stock,Tire Storage
+FORD,SPARK-PLUG,SP-548,Spark Plug (Motorcraft Platinum),14.00,6.50,In Stock,Bin F4
+FORD,SUSP-FRONT,FL3Z-3078-A,Front Suspension Strut Assy,185.00,130.00,In Stock,Bin F5
+FORD,SUSP-FRONT,FL3Z-3079-A,Front Upper Control Arm,125.00,85.00,In Stock,Bin F6
+FORD,COOLING-SYS,HL3Z-8005-C,Radiator (Heavy Duty Tow),415.00,315.00,1 Day Order,Dist Center
+FORD,OIL-LEAK,BR3Z-6582-A,Valve Cover Gasket (RH),35.00,15.00,In Stock,Bin A2
+CHEVROLET,ALT-REPL,84143542,Alternator (ACDelco Gold),345.00,280.00,In Stock,Bin C1
+CHEVROLET,RR-BRAKE,23376678,Rear Brake Rotor & Pad Kit,195.00,140.00,In Stock,Bin C2
+CHEVROLET,TIRE-SET,BRIDGE-DUEL-01,Bridgestone Dueler A/T (265/65R18),235.00,205.00,In Stock,Tire Rack
+CHEVROLET,SUSP-FRONT,84082233,Front Shock Absorber (Rancho),115.00,85.00,In Stock,Bin C3
+CHEVROLET,OIL-LEAK,12637683,Valve Cover Gasket,28.00,12.00,In Stock,Bin C4
+RAM,ALT-REPL,4801833AB,Alternator (Mopar 220 Amp),510.00,420.00,2 Day Order,Mopar Dist
+RAM,RR-BRAKE,68049158AA,Rear Brake Pad Kit,88.00,55.00,In Stock,Bin R1
+RAM,RR-BRAKE,68040177AC,Rear Brake Rotor,120.00,85.00,In Stock,Bin R2
+RAM,SUSP-FRONT,68231976AA,Air Suspension Spring (Front),650.00,500.00,Special Order,Mopar Dist
+RAM,OIL-LEAK,53022224AC,Rocker Cover Gasket,42.00,18.00,In Stock,Bin R2
+JEEP,ALT-REPL,56029765AA,Alternator (Mopar),420.00,350.00,In Stock,Bin J1
+JEEP,RR-BRAKE,68334863AA,Rear Brake Pads (Ceramic),92.00,60.00,In Stock,Bin J2
+JEEP,RR-BRAKE,52060398AD,Rear Brake Rotor,95.00,65.00,In Stock,Bin J3
+JEEP,SUSP-FRONT,68330588AB,Front Track Bar (Heavy Duty),210.00,160.00,1 Day Order,Bin J3
+JEEP,COOLING-SYS,68143886AA,Radiator,295.00,210.00,In Stock,Bin J4

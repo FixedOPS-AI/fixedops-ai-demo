@@ -5,21 +5,21 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 
 class VinProfile:
-    # UPDATED: Added 'drivetrain' to the initialization
-    def __init__(self, make: str, model: str, year: int, engine: str, trim: str, drivetrain: str, confidence: float):
+    def __init__(self, make: str, model: str, year: int, engine: str, trim: str, drivetrain: str, vehicle_type: str, confidence: float):
         self.make = make
         self.model = model
         self.year = year
         self.engine = engine
         self.trim = trim
-        self.drivetrain = drivetrain  # <--- The missing piece!
+        self.drivetrain = drivetrain
+        self.vehicle_type = vehicle_type  # New Field for Car/Truck/SUV
         self.confidence = confidence
 
 class VinDecoder:
     def __init__(self, data_dir: str = "data"):
         self.wmi_file = Path(data_dir) / "wmi_make.csv"
         self.rules_file = Path(data_dir) / "vin_rules.json"
-        self.wmi_db = {}
+        self.wmi_db = {} 
         self.rules_db = {}
         self._load_data()
 
@@ -30,8 +30,11 @@ class VinDecoder:
                 reader = csv.DictReader(f)
                 for row in reader:
                     prefix = row["wmi_prefix"].strip()
-                    make = row["make"].strip()
-                    self.wmi_db[prefix] = make
+                    # Store both Make and Type (Car/Truck)
+                    self.wmi_db[prefix] = {
+                        "make": row["make"].strip(),
+                        "type": row.get("type", "Unknown") 
+                    }
 
         # 2. Load Rules Data
         if self.rules_file.exists():
@@ -41,8 +44,7 @@ class VinDecoder:
     def decode(self, vin: str) -> VinProfile:
         vin = vin.upper().strip()
         if len(vin) != 17:
-             # Return "UNKNOWN" for drivetrain if VIN is invalid
-             return VinProfile("UNKNOWN", "UNKNOWN", 0, "UNKNOWN", "UNKNOWN", "UNKNOWN", 0.0)
+            return VinProfile("UNKNOWN", "UNKNOWN", 0, "UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN", 0.0)
 
         # A. Decode Year (10th digit)
         year_char = vin[9]
@@ -55,10 +57,12 @@ class VinDecoder:
         }
         year = year_map.get(year_char, 2000)
 
-        # B. Decode Make (WMI - First 3 digits)
+        # B. Decode Make & Type (WMI - First 3 digits)
         wmi = vin[:3]
-        make = self.wmi_db.get(wmi, "UNKNOWN")
-        
+        wmi_data = self.wmi_db.get(wmi, {"make": "UNKNOWN", "type": "UNKNOWN"})
+        make = wmi_data["make"]
+        vehicle_type = wmi_data["type"]
+
         # C. Decode Model/Engine/Trim/Drivetrain
         model = "Unknown Model"
         engine = "UNKNOWN"
@@ -72,17 +76,17 @@ class VinDecoder:
                 rule = self.rules_db[make]
                 engine = random.choice(rule.get("engines", ["Standard Engine"]))
                 trim = random.choice(rule.get("trims", ["Base"]))
-                
-                # Assign a random drivetrain to make it look realistic
-                drivetrain = random.choice(["FWD", "RWD", "AWD", "4WD"])
-                
-                # Assign a dummy model name based on Make
-                if make == "HONDA": model = "CIVIC"
-                elif make == "FORD": model = "F-150"
-                elif make == "TOYOTA": model = "CAMRY"
-                elif make == "CHEVROLET": model = "SILVERADO"
-                elif make == "RAM": model = "1500"
-                elif make == "JEEP": model = "WRANGLER"
-                elif make == "DODGE": model = "CHALLENGER"
+            
+            # Realistic Drivetrain Guess
+            drivetrain = random.choice(["FWD", "RWD", "AWD", "4WD"])
 
-        return VinProfile(make, model, year, engine, trim, drivetrain, confidence)
+            # Dummy Model Logic
+            if make == "HONDA": model = "CIVIC"
+            elif make == "FORD": model = "F-150"
+            elif make == "TOYOTA": model = "CAMRY"
+            elif make == "CHEVROLET": model = "SILVERADO"
+            elif make == "RAM": model = "1500"
+            elif make == "JEEP": model = "WRANGLER"
+            elif make == "DODGE": model = "CHALLENGER"
+
+        return VinProfile(make, model, year, engine, trim, drivetrain, vehicle_type, confidence)
